@@ -1,9 +1,7 @@
-# argparse.sh
-My bash argparse. I have used this enough to feel okay sharing it. Just source it into your script, define the args, then run `arg_parse "$@"`. It displays a nice help menu too.
-
-## Example usage
-```
-source "./argparse.sh"
+#!/usr/bin/env bash
+#set -euo pipefail
+# shellcheck source=./argparse.sh
+source "./frameworks/argparse.sh"
 
 arg_desc "Copy files around with style."
 #arg_flag <name> <varname> <short> <long> <help>
@@ -26,4 +24,3 @@ if (( verbose )); then
   echo "VERBOSE on"
   echo "threads=$threads mode=$mode src=$src dst=$dst rest=(${rest[*]-})"
 fi
-```
